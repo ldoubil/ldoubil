@@ -19,6 +19,11 @@ jobs:
     timeout-minutes: 10
 
     steps:
+      - name: GitHub-Profile-3D-Contrib
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
       # generates a snake game from a github user (<github_user_name>) contributions graph, output a svg animation at <svg_out_path>
       - name: generate-snake-game-from-github-contribution-grid
         uses: Platane/snk@v3.2.0
