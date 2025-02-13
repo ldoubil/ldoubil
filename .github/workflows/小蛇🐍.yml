@@ -24,6 +24,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
+      - name: Commit & Push
+        run: |
+          git config user.name ldoubil
+          git config user.email baikaiwen12@outlook.com
+          git add -A .
+          git commit -m "generated"
+          git push
       # generates a snake game from a github user (<github_user_name>) contributions graph, output a svg animation at <svg_out_path>
       - name: generate-snake-game-from-github-contribution-grid
         uses: Platane/snk@v3.2.0
